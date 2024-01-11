@@ -120,6 +120,9 @@ ax2.tick_params(axis='y', colors='white')
 
 plt.show()
 ```
+
+<img width="506" alt="Screenshot 2024-01-11 170228" src="https://github.com/Laurenjohns/Python-Projects/assets/107310914/798c7715-d3e7-42f4-a0f6-b17df229195d">
+
 ---
 
 ### Call Center Simulation 
