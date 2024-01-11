@@ -3,14 +3,57 @@
 ---
 ## Table of Contents:
 
+- [S&P 500 Web Scraping](#sp-500-web-scraping)
 - [Stock Analysis](#stock-analysis)
 - [Call Center Simulation](#call-center-simulation)
+  
+---
+
+### S&P 500 Web Scraping
+
+Project Overview: Utilizing Python for web scraping. 
+
+```python
+
+# web scrap and load
+
+import bs4 as bs
+import requests
+# web scrap and save using import pickle
+import pickle
+
+html = requests.get('https://en.wikipedia.org/wiki/List_of_S%26P_500_companies')
+soup = bs.BeautifulSoup(html.text)
+
+tickers = []
+
+table = soup.find('table', {'class': 'wikitable sortable'})
+rows = table.findAll('tr')[1:]
+for row in rows:
+  ticker = row.findAll('td')[0].text
+  tickers.append(ticker[:-1])
+# load
+
+print(tickers)
+
+# saves
+with open('snp500.pickle', 'wb') as f:
+    pickle.dump(tickers, f)
+
+# below is used after web scraping and saving to reload data again.
+
+import pickle
+with open('snp500.pickle', 'rb') as f:
+     tickers = pickle.load(f)
+  
+print(tickers)
+```
 
 ---
 
 ### Stock Analysis  
 
-Project Overview: Leveraging Python and Google Colaboratory to create a stock analysis of Apple's RSI.
+Project Overview: Leveraging Python to create a stock analysis of Apple's RSI.
 
 ```python
 import pandas as pd
