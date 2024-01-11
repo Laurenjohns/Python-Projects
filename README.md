@@ -1,6 +1,13 @@
 # Python-Projects
 
 ---
+## Table of Contents:
+
+- [Stock Analysis](#stock-analysis)
+- [Call Center Simulation](#call-center-simulation)
+
+---
+
 ### Stock Analysis  
 
 Project Overview: Leveraging Python and Google Colaboratory to create a stock analysis of Apple's RSI.
