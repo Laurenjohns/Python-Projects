@@ -2,7 +2,7 @@
 
 ---
 
- Stock Analysis (RSI) - pending update 
+ Stock Analysis (RSI) - pending  
 ```python
 import pandas as pd
 import pandas_datareader as web
