@@ -71,3 +71,43 @@ ax2.tick_params(axis='y', colors='white')
 plt.show()
 ```
 ---
+
+### Call Center Simulation 
+
+Project Overview:  Real-Time performance monitoring of a call center using Python, Microsoft SQL Server, and Power BI. The simulation will generate random calls from customers and store the call center information in a Microsoft SQL server database for performance monitoring. Utilizing the insert command and connecting Python to the SQL server for automatic data entry.
+
+```python
+import datetime
+import time
+import random
+
+while 1==1:
+    date = datetime.date.today()
+    location = random.randint(111, 201)
+    company = random.randint(11,30)
+    issue = random.randint(111,130)
+    csr = random.randint(111,210)
+    rtime = random.randint(1,300)
+    ctime = random.randint(1,600)
+    status = random.randint(1,4)
+    if status == 1:
+        rating = random.randint(5,10)
+    elif status == 2:
+        rating = random.randint(3,8)
+    elif status == 3:
+        rating = random.randint(1,3)
+    elif status == 4:
+        rating = random.randint(1,5)
+        
+    print(date)
+    print(location)
+    print(company)
+    print(issue)
+    print(csr)
+    print(rtime)
+    print(ctime)
+    print(status)
+    print(rating)    
+    time.sleep(1)
+```
+---
