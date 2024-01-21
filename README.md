@@ -4,6 +4,7 @@
 ## Table of Contents:
 
 - [Kaggle API](#kaggle-api)
+- [PDF MP3 Converter](#pdf-mp3-converter)
 - [S&P 500 Web Scraping](#sp-500-web-scraping)
 - [Stock Analysis](#stock-analysis)
 - [Call Center Simulation](#call-center-simulation)
@@ -80,6 +81,28 @@ bikes.to_excel('london_bikes_final.xlsx', sheet_name='Data')
 ```
 <img width="656" alt="Screenshot 2024-01-16 142904" src="https://github.com/Laurenjohns/Python-Projects/assets/107310914/067bda9a-333a-478a-8e76-34454a728b35">
 
+---
+
+### PDF MP3 Converter 
+
+Project Overview: Create a simple Python script that automates the conversion of text from a PDF file to an MP3 audio file.
+
+```python
+import pyttsx3,PyPDF2
+
+pdfreader = PyPDF2.PdfReader(open('Lauren Johnson Resume 2024.pdf', 'rb'))
+speaker = pyttsx3.init()
+
+for page_num in range(len(pdfreader.pages)):
+    text = pdfreader.pages[page_num].extract_text()
+    clean_text = text.strip().replace('\n', ' ')
+    print(clean_text)
+
+speaker.save_to_file(clean_text, 'resume.mp3')
+speaker.runAndWait()
+
+speaker.stop()
+```
 ---
 
 ### S&P 500 Web Scraping
